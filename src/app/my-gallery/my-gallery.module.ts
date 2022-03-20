@@ -5,6 +5,7 @@ import {MyGalleryComponent} from "./my-gallery.component";
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImagesComponent } from './gallery/images/images.component';
 import { AddImageComponent } from './gallery/images/add-image/add-image.component';
+import { AddFolderComponent } from './folder-sidebar/add-folder/add-folder.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AddImageComponent } from './gallery/images/add-image/add-image.componen
     FolderSidebarComponent,
     GalleryComponent,
     ImagesComponent,
-    AddImageComponent
+    AddImageComponent,
+    AddFolderComponent
   ],
   exports: [
     FolderSidebarComponent
