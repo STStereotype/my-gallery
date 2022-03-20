@@ -9,6 +9,8 @@ export class AddFolderComponent implements OnInit {
 
   constructor() { }
 
+  AddFolder() {}
+
   ngOnInit(): void {
   }
 
