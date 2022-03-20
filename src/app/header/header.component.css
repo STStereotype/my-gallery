@@ -1,0 +1,78 @@
+.header-background{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #383C42;
+  padding: 0 10px;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.logo_left-background, .logo_right-background{
+  display: flex;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.logo_left-background{
+  background: #78004C;
+}
+
+.logo_right-background{
+  background: #00784C;
+  margin-left: 2px;
+}
+
+.logo_text{
+  font-size: 14px;
+  font-weight: 100;
+  color: white;
+  margin-top: 1px;
+}
+
+.header_right-block{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notifications{
+  padding: 0;
+  cursor: pointer;
+  margin: 5px 10px 2px 0;
+}
+
+.authorization{
+  display: flex;
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: -2px;
+  margin-right: 1px;
+}
+
+.authorization p{
+  padding: 0;
+  margin: 0;
+}
+
+.authorization_slash{
+  margin: 0 3px 0 4px !important;
+}
+
+.authorization_sign-in, .authorization_sign-up{
+  color: white;
+  transition: color .5s;
+}
+
+.authorization_sign-up:hover, .authorization_sign-in:hover{
+  color: #8EFFEB;
+  cursor: pointer;
+}
