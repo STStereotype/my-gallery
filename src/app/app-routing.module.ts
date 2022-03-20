@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
+  },
+  {
+    path: "my-gallery-component",
+    loadChildren: () => import("./my-gallery/my-gallery.module").then(x => x.MyGalleryModule)
   }
 ];
 @NgModule({
