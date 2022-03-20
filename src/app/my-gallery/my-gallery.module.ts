@@ -4,6 +4,7 @@ import {MyGalleryRoutingModule} from "./my-gallery-routing.module";
 import {MyGalleryComponent} from "./my-gallery.component";
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImagesComponent } from './gallery/images/images.component';
+import { AddImageComponent } from './gallery/images/add-image/add-image.component';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ImagesComponent } from './gallery/images/images.component';
     MyGalleryComponent,
     FolderSidebarComponent,
     GalleryComponent,
-    ImagesComponent
+    ImagesComponent,
+    AddImageComponent
   ],
   exports: [
     FolderSidebarComponent
