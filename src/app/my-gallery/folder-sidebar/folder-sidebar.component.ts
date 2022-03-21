@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MyGalleryService} from "../my-gallery.service";
 
 @Component({
   selector: 'app-folder-sidebar',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FolderSidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public myGalleryService: MyGalleryService) {}
 
   ngOnInit(): void {
   }

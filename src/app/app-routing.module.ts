@@ -12,6 +12,7 @@ const routes: Routes = [
     loadChildren: () => import("./my-gallery/my-gallery.module").then(x => x.MyGalleryModule)
   }
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

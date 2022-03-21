@@ -3,10 +3,12 @@
   <p class="line"></p>
   <div class="folder">
     <ul class="folder-nav">
-      <li class="folder">
-        <a>Folder</a>
+      <li class="folder" *ngFor="let folder of myGalleryService.folders">
+        <a [routerLink]="[folder.id]">{{folder.nameFolder}}</a>
       </li>
-      <app-add-folder></app-add-folder>
+      <li>
+        <app-add-folder></app-add-folder>
+      </li>
     </ul>
   </div>
 </div>

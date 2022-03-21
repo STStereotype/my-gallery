@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
+import {MyGalleryService} from "../my-gallery.service";
 
 @Component({
   selector: 'app-gallery',
@@ -13,15 +14,18 @@ export class GalleryComponent implements OnInit {
   numberImagesCurrentFolder!: number;
   creationDateCurrentFolder!: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private myGalleryService: MyGalleryService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      console.log(params);
-      this.currentFolderName =  params['name'];
-      this.currentFolderSize = 0;
-      this.numberImagesCurrentFolder = 0;
-      this.creationDateCurrentFolder = "01.01.2000"
+      for(let folder of this.myGalleryService.folders) {
+        if(folder.id == params["id"]) {
+          this.currentFolderName =  folder.nameFolder;
+          this.currentFolderSize = folder.sizeFolder;
+          this.numberImagesCurrentFolder = folder.images.length;
+          this.creationDateCurrentFolder = "01.01.2000"
+        }
+      }
     })
   }
 }

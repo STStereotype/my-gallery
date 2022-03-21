@@ -1,0 +1,65 @@
+p{
+  margin: 0;
+}
+
+.gallery{
+  width: 1650px;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+.folder-information, .panel-images{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #D2D2D2;
+  border-radius: 10px;
+}
+
+.folder-information_info{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.folder-name{
+  font-size: 18px;
+  color: #8EFFEB;
+  background-color: #383C42;
+  padding: 5px 11px 5px 10px;
+  border-radius: 5px;
+}
+
+.info-block{
+  display: flex;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.left-block{
+  background: #383C42;
+  color: white;
+  border-radius: 5px 0 0 5px;
+  padding: 5px 5px 3px 10px;
+}
+
+.right-block{
+  background: white;
+  border-radius: 0 5px 5px 0;
+  padding: 5px 11px 0 5px;
+}
+
+.delete-folder{
+  color: red;
+  background: #383C42;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 5px;
+  padding: 5px 11px 3px 9px;
+  margin-right: 20px;
+  transition: color .75s;
+}
+
+.delete-folder:hover{
+  cursor: pointer;
+}
