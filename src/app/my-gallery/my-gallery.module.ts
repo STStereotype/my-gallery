@@ -8,6 +8,7 @@ import { AddImageComponent } from './gallery/images/add-image/add-image.componen
 import { AddFolderComponent } from './folder-sidebar/add-folder/add-folder.component';
 import { CommonModule } from "@angular/common";
 import { MyGalleryService } from "./my-gallery.service";
+import { ImageComponent } from './gallery/images/image/image.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MyGalleryService } from "./my-gallery.service";
     GalleryComponent,
     ImagesComponent,
     AddImageComponent,
-    AddFolderComponent
+    AddFolderComponent,
+    ImageComponent
   ],
   exports: [
     FolderSidebarComponent

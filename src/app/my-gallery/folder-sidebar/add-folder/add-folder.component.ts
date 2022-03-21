@@ -18,5 +18,4 @@ export class AddFolderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

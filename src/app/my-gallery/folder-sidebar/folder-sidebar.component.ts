@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MyGalleryService} from "../my-gallery.service";
+import { MyGalleryService } from "../my-gallery.service";
 
 @Component({
   selector: 'app-folder-sidebar',
