@@ -9,6 +9,7 @@ import { AddFolderComponent } from './folder-sidebar/add-folder/add-folder.compo
 import { CommonModule } from "@angular/common";
 import { MyGalleryService } from "./my-gallery.service";
 import { ImageComponent } from './gallery/images/image/image.component';
+import {GeneralModule} from "../common/general.module";
 
 @NgModule({
   declarations: [
@@ -25,10 +26,12 @@ import { ImageComponent } from './gallery/images/image/image.component';
   ],
   imports: [
     MyGalleryRoutingModule,
-    CommonModule
+    CommonModule,
+    GeneralModule
   ],
   providers: [
-    MyGalleryService
+    MyGalleryService,
+    FileReader
   ]
 })
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { MyGalleryService } from "../my-gallery.service";
 
 @Component({
@@ -10,7 +10,6 @@ export class FolderSidebarComponent implements OnInit {
 
   constructor(public myGalleryService: MyGalleryService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

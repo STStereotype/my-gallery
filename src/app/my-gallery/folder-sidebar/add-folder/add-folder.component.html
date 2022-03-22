@@ -1,1 +1,4 @@
-<p class="add-folder" (click)="AddFolder()">add folder</p>
+<div class="add-folder">
+  <button class="btn" (click)="AddFolder(folderName)" >+</button>
+  <input class="folder-name" #folderName type="text" maxlength="31" placeholder="Название папки">
+</div>

@@ -1,21 +1,21 @@
 <div class="gallery">
   <div class="folder-information">
     <div class="folder-information_info">
-      <p class="folder-name">{{currentFolderName}}</p>
+      <p class="folder-name">{{date.currentFolderName}}</p>
       <div class="info-block folder-size">
         <p class="left-block">Folder size:</p>
-        <p class="right-block">{{currentFolderSize}} mb</p>
+        <p class="right-block">{{date.currentFolderSize}} mb</p>
       </div>
       <div class="info-block numbers-photos">
         <p class="left-block">Number of photos: </p>
-        <p class="right-block">{{numberImagesCurrentFolder}}</p>
+        <p class="right-block">{{date.numberImagesCurrentFolder}}</p>
       </div>
       <div class="info-block folder-creation-date">
         <p class="left-block">Folder creation date: </p>
-        <p class="right-block">{{creationDateCurrentFolder}}</p>
+        <p class="right-block">{{date.creationDateCurrentFolder}}</p>
       </div>
     </div>
-    <p class="delete-folder">Delete folder</p>
+    <p class="delete-folder" (click)="DeleteFolder()">Delete folder</p>
   </div>
-  <app-images></app-images>
+  <app-images (folderInformation)="FolderInformation($event)"></app-images>
 </div>

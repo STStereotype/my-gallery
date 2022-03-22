@@ -10,10 +10,12 @@ export class AddFolderComponent implements OnInit {
 
   constructor(public myGalleryService: MyGalleryService) { }
 
-  AddFolder() {
-    this.myGalleryService.SetFolder("Folder").subscribe((date: any) => {
+  AddFolder(folderName: any) {
+    if(folderName.value != "")
+    this.myGalleryService.SetFolder(folderName.value).subscribe((date: any) => {
       this.myGalleryService.folders.push(date);
     });
+    folderName.value = "";
   }
 
   ngOnInit(): void {

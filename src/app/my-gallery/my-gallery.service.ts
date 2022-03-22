@@ -31,6 +31,21 @@ export class MyGalleryService {
     )
   }
 
+  DeleteFolder(id: any) {
+    return this.http.delete(`http://localhost:3000/folders/${id}`).pipe(
+      catchError(error => {
+        return throwError(error);
+      })
+    )
+  }
+
+  SetImage(folder: any, file: string, sizeImage: number) {
+    folder.images.push(file);
+    console.log(folder.id);
+    folder.sizeFolder += sizeImage;
+    return this.http.put(`http://localhost:3000/folders/${folder.id}`, folder);
+  }
+
   GetDate() {
     return this.http.get("http://localhost:3000/folders").pipe(
       catchError(error => {

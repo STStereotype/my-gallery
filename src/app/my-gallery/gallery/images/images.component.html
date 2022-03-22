@@ -1,4 +1,6 @@
 <div class="panel-background">
   <div class="panel-images">
+    <app-image *ngFor="let image of myGalleryService.images" [image]="image"></app-image>
+    <app-add-image (onUpdateList)="updateImageList($event)"></app-add-image>
   </div>
 </div>
