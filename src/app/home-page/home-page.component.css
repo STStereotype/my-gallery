@@ -1,7 +1,7 @@
 .background {
   position: absolute;
   width: 1920px;
-  height: 1080px;
+  height: 1090px;
   top: 0;
   left: 0;
   background: url("../../assets/images/home-page/Background.png") no-repeat center center;
@@ -18,9 +18,11 @@
 .title {
   font-size: 40px;
   font-weight: 600;
+  -webkit-user-select: none;
 }
 
-button {
+.btn {
+  display: inline-block;
   font-family: 'Montserrat', sans-serif !important;
   font-size: 16px;
   font-weight: 500;
@@ -31,8 +33,9 @@ button {
   background: #0047FF;
   color: white;
   transition: background 0.2s;
+  -webkit-user-select: none;
 }
 
-button:hover {
+.btn:hover {
   background: #003fdc;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UsersServices} from "../users/users.services";
+import {MyGalleryService} from "./my-gallery.service";
 
 @Component({
   selector: 'app-my-gallery',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyGalleryComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private user: UsersServices, private myGallery: MyGalleryService) {
+    myGallery.folders = user.user.folders;
   }
 
+  ngOnInit(): void {}
 }

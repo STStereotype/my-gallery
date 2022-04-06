@@ -1,0 +1,6 @@
+<form>
+  <input class="input email-phone" type="text" #login placeholder="email / phone">
+  <input class="input password" type="password" #password placeholder="password">
+  <a routerLink="#" class="Forgot">Forgot your password</a>
+  <button class="btn" type="button" (click)="Continue(login.value, password.value)">Continue</button>
+</form>

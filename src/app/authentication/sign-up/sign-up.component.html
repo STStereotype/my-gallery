@@ -1,0 +1,75 @@
+<form (ngSubmit)="submitForm(form)" #form="ngForm">
+  <div class="form-group">
+    <input
+      class="input name"
+      type="text"
+      ngModel
+      required
+      name="username"
+      placeholder="username"
+      #username="ngModel"
+    >
+    <p *ngIf="username.invalid && username.touched" class="errorMessage">Поле не должно быть пустым</p>
+  </div>
+  <div class="form-group">
+    <input
+      class="input surname"
+      type="text"
+      ngModel
+      required
+      name="surname"
+      placeholder="surname"
+      #surname="ngModel"
+    >
+    <p *ngIf="surname.invalid && surname.touched" class="errorMessage">Поле не должно быть пустым</p>
+  </div>
+  <div class="form-group">
+    <input
+      class="input login"
+      type="text"
+      ngModel
+      required
+      name="login"
+      placeholder="login"
+      #login="ngModel"
+    >
+    <p *ngIf="login.invalid && login.touched" class="errorMessage">Поле не должно быть пустым</p>
+  </div>
+  <div class="form-group">
+    <input
+      class="input email-phone"
+      type="email"
+      ngModel
+      required
+      name="phoneNumber"
+      placeholder="email / phone"
+      #phoneNumber="ngModel"
+    >
+    <p *ngIf="phoneNumber.invalid && phoneNumber.touched" class="errorMessage">Введите корректрый email</p>
+  </div>
+  <div class="form-group">
+    <input
+      class="input password"
+      type="password"
+      ngModel
+      required
+      name="password"
+      placeholder="password"
+      #password="ngModel"
+    >
+    <p *ngIf="password.invalid && password.touched" class="errorMessage">Пароль должен имень не меньше 6 символов</p>
+  </div>
+  <div class="form-group">
+    <input
+      class="input confirmation-password"
+      type="password"
+      ngModel
+      required
+      name="confirmationPassword"
+      placeholder="confirmation-password"
+      #confirmationPassword="ngModel"
+    >
+    <p *ngIf="confirmationPassword.touched && password.value !== confirmationPassword.value" class="errorMessage">Пароль не совподает</p>
+  </div>
+  <button class="btn" type="submit" [disabled]="!form.valid">Continue</button>
+</form>

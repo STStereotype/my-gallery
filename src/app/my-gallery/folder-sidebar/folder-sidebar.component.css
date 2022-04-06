@@ -25,6 +25,7 @@ a {
   font-weight: 400;
   padding-top: 39px;
   margin-top: 2px;
+  -webkit-user-select: none;
 }
 
 .panel-title{

@@ -19,6 +19,7 @@ interface Date {
 export class GalleryComponent {
 
   date: Date = { currentFolderName: "not found", currentFolderSize: 0, numberImagesCurrentFolder: 0, creationDateCurrentFolder: 0, id: 0};
+  ifDeletion: boolean = false;
 
   constructor(private myGalleryService: MyGalleryService, private router: Router) {}
 
@@ -29,9 +30,7 @@ export class GalleryComponent {
   DeleteFolder() {
     this.myGalleryService.DeleteFolder(this.date.id).subscribe((date: any) => {
       this.router.navigate(['/my-gallery-component']);
-      this.myGalleryService.GetDate().subscribe((date:any) => {
-        this.myGalleryService.folders = date;
-      })
+      this.myGalleryService.GetUser().subscribe()
     })
   }
 }

@@ -1,5 +1,5 @@
 <header class="header-background">
-  <div class="logo">
+  <div class="logo" (click)="HomePage()">
     <div class="logo_left-background">
       <p class="logo_text">M</p>
     </div>
@@ -11,10 +11,23 @@
     <div class="notifications">
       <img src="../../assets/images/header/notificationBell.png" alt="notification bell">
     </div>
-    <div class="authorization">
-      <p class="authorization_sign-in">Sign In</p>
+    <div class="authorization" *ngIf="!authentication.isLoggedIn">
+      <p class="authorization_sign-in" routerLink="/authentication/sign in">Sign In</p>
       <p class="authorization_slash">/</p>
-      <p class="authorization_sign-up">Sign Up</p>
+      <p class="authorization_sign-up"  routerLink="/authentication/sign un">Sign Up</p>
+    </div>
+    <div class="user" *ngIf="authentication.isLoggedIn" (click)="userInfo=true" (mouseleave)="userInfo=false">
+      <p class="user-icon"></p>
+      <p class="user-name">User</p>
+      <div class="user-info" *ngIf="userInfo">
+        <p class="indent-dark"></p>
+        <p class="indent-lite"></p>
+        <div class="user">
+          <p class="user-icon"></p>
+          <p class="big-user-name">User</p>
+        </div>
+        <p class=""></p>
+      </div>
     </div>
   </div>
 </header>

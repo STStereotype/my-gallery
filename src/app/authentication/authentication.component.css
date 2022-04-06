@@ -1,0 +1,43 @@
+.background {
+  Position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width: 500px;
+  margin-top: -6px;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 50px #000000;
+  border-radius: 20px;
+  -webkit-user-select: none;
+}
+
+.panel{
+  width: 300px;
+  padding: 30px 100px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 50px #000000;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.mode {
+  display: flex;
+  justify-content: space-between;
+  width: 201px;
+  margin: 0 auto 50px auto;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.sign-in, .sign-up {
+  cursor: pointer;
+}
+
+.sign-in {
+  font-weight: 500;
+}
+
+.slash {
+  cursor: default;
+}

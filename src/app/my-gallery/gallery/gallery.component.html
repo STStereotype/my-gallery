@@ -15,7 +15,13 @@
         <p class="right-block">{{date.creationDateCurrentFolder}}</p>
       </div>
     </div>
-    <p class="delete-folder" (click)="DeleteFolder()">Delete folder</p>
+    <p class="delete-folder" (click)="ifDeletion = true">Delete folder</p>
   </div>
   <app-images (folderInformation)="FolderInformation($event)"></app-images>
+</div>
+<div class="deletion-confirmation" *ngIf="ifDeletion">
+  <div class="background">
+    <button class="btn-delete" (click)="DeleteFolder()">Delete</button>
+    <button class="btn-cancel" (click)="ifDeletion = false">Cancel</button>
+  </div>
 </div>

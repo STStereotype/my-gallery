@@ -1,8 +1,9 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {catchError, throwError} from "rxjs";
+import {UsersServices} from "../users/users.services";
 
-interface Date {
+interface Folder {
   nameFolder: string,
   sizeFolder: number,
   images: Array<string>,
@@ -13,41 +14,51 @@ interface Date {
 
 export class MyGalleryService {
 
-  folders: Array<Date> = [];
+  folders: Array<Folder> = [];
   images: Array<string> = [];
 
-  constructor(private http: HttpClient) {
-    this.GetDate().subscribe((date: any) =>{
-      this.folders = date;
-    })
-  }
+  constructor(private http: HttpClient, private  user: UsersServices) {}
 
   SetFolder(name: string) {
-    let folder = {nameFolder: name, sizeFolder: 0, images: [], id: 0};
-    return this.http.post("http://localhost:3000/folders", folder).pipe(
-      catchError(error => {
-        return throwError(error);
-      })
-    )
+    let folderId = 1;
+    if(this.user.user.folders.length !== 0) {
+      folderId = this.user.user.folders[this.user.user.folders.length - 1].id + 1;
+    }
+    let folder = {nameFolder: name, sizeFolder: 0, images: [], id: folderId};
+    this.user.user.folders.push(folder);
+    return this.PutUser();
   }
 
   DeleteFolder(id: any) {
-    return this.http.delete(`http://localhost:3000/folders/${id}`).pipe(
+    for(let i = 0; i < this.user.user.folders.length; i++) {
+      if(this.user.user.folders[i].id === id) {
+        this.user.user.folders.splice(i, 1);
+      }
+    }
+    return this.PutUser();
+  }
+
+  SetImage(folder: any, file: string, sizeImage: number) {
+    console.log(folder);
+    console.log(this.user.user.folders);
+    console.log(this.user.user.folders.indexOf(folder));
+    let index = this.user.user.folders.indexOf(folder);
+    console.log(this.user.user.folders[index].images);
+    this.user.user.folders[index].images.push(file);
+    this.user.user.folders[index].sizeFolder += sizeImage;
+    return this.PutUser();
+  }
+
+  GetUser() {
+    return this.http.get(`http://localhost:3000/Users/${this.user.user.id}`).pipe(
       catchError(error => {
         return throwError(error);
       })
     )
   }
 
-  SetImage(folder: any, file: string, sizeImage: number) {
-    folder.images.push(file);
-    console.log(folder.id);
-    folder.sizeFolder += sizeImage;
-    return this.http.put(`http://localhost:3000/folders/${folder.id}`, folder);
-  }
-
-  GetDate() {
-    return this.http.get("http://localhost:3000/folders").pipe(
+  private PutUser() {
+    return this.http.put(`http://localhost:3000/Users/${this.user.user.id}`,  this.user.user).pipe(
       catchError(error => {
         return throwError(error);
       })
