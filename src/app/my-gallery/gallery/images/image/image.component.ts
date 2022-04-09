@@ -1,5 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
 
+interface Image {
+  nameImage: string,
+  url: string,
+  image: string,
+  sizeImage: number
+}
+
 @Component({
   selector: 'app-image',
   templateUrl: './image.component.html',
@@ -7,11 +14,13 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ImageComponent implements OnInit {
 
-  @Input() image!: string;
+  @Input() image!: Image;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  OpenImage() {
+  }
 }

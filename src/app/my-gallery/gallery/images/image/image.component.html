@@ -1,1 +1,2 @@
-<div class="image" appBackground [img]="image"></div>
+<div class="image" appBackground [img]="image.image" [routerLink]="['image-preview']" (click)="OpenImage()"></div>
+<router-outlet></router-outlet>

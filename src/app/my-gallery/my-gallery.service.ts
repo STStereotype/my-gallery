@@ -3,10 +3,17 @@ import {HttpClient} from "@angular/common/http";
 import {catchError, throwError} from "rxjs";
 import {UsersServices} from "../users/users.services";
 
+interface Image {
+  nameImage: string,
+  url: string,
+  image: string,
+  sizeImage: number
+}
+
 interface Folder {
   nameFolder: string,
   sizeFolder: number,
-  images: Array<string>,
+  images: Array<Image>,
   id: number
 }
 
@@ -15,7 +22,7 @@ interface Folder {
 export class MyGalleryService {
 
   folders: Array<Folder> = [];
-  images: Array<string> = [];
+  images: Array<Image> = [];
 
   constructor(private http: HttpClient, private  user: UsersServices) {}
 
@@ -38,14 +45,14 @@ export class MyGalleryService {
     return this.PutUser();
   }
 
-  SetImage(folder: any, file: string, sizeImage: number) {
+  SetImage(folder: any, image: {nameImage: string, url: string, image: string, sizeImage: number}) {
     console.log(folder);
     console.log(this.user.user.folders);
     console.log(this.user.user.folders.indexOf(folder));
     let index = this.user.user.folders.indexOf(folder);
     console.log(this.user.user.folders[index].images);
-    this.user.user.folders[index].images.push(file);
-    this.user.user.folders[index].sizeFolder += sizeImage;
+    this.user.user.folders[index].images.push(image);
+    this.user.user.folders[index].sizeFolder += image.sizeImage;
     return this.PutUser();
   }
 

@@ -1,7 +1,14 @@
+interface Image {
+  nameImage: string,
+  url: string,
+  image: string,
+  sizeImage: number
+}
+
 interface Folder {
   nameFolder: string,
   sizeFolder: number,
-  images: Array<string>,
+  images: Array<Image>,
   id: number
 }
 

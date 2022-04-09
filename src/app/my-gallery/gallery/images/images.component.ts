@@ -51,12 +51,12 @@ export class ImagesComponent implements OnInit {
       id: folder.id
     })
   }
-  updateImageList(image: {image: string, sizeImage: number}) {
+
+  updateImageList(image: {nameImage: string, url: string, image: string, sizeImage: number}) {
     let subscription = this.route.params.subscribe((params: Params) => {
       for (let folder of this.myGalleryService.folders){
         if(folder.id.toString() === params['id']) {
-          this.myGalleryService.SetImage(folder, image.image, image.sizeImage).subscribe((images: any) => {
-            this.myGalleryService.images = folder.images;
+          this.myGalleryService.SetImage(folder, image).subscribe((images: any) => {
             this.UpdateFolderInformation(folder);
             subscription.unsubscribe();
           });

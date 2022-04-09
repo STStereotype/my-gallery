@@ -13,23 +13,22 @@ export class AddImageComponent implements OnInit {
 
   selectedFile!: File;
 
-  @Output('onUpdateList') image = new EventEmitter<{image: string, sizeImage: number}>();
+  @Output('onUpdateList') image = new EventEmitter<{nameImage: string, url: string, image: string, sizeImage: number}>();
 
   onFileSelected(event: any) {
     this.selectedFile = <File>event.target.files[0];
     let reader  = new FileReader();
-    let result!: string;
-    reader.onloadend = () => {
-      result = <string>reader.result;
-      this.image.emit({
-        image: result,
-        sizeImage: this.selectedFile.size
-      });
-    }
     if (this.selectedFile) {
       reader.readAsDataURL(this.selectedFile);
-    } else {
-      result = "";
+      reader.onloadend = () => {
+        let urlImage = URL.createObjectURL(this.selectedFile)
+        this.image.emit({
+          nameImage: this.selectedFile.name.slice(0, this.selectedFile.name.lastIndexOf('.')),
+          url: urlImage.slice(urlImage.lastIndexOf('/') + 1, urlImage.length),
+          image: <string>reader.result,
+          sizeImage: this.selectedFile.size
+        });
+      }
     }
     event.target.value = "";
   }
