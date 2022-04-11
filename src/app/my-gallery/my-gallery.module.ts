@@ -7,9 +7,10 @@ import { ImagesComponent } from './gallery/images/images.component';
 import { AddImageComponent } from './gallery/images/add-image/add-image.component';
 import { AddFolderComponent } from './folder-sidebar/add-folder/add-folder.component';
 import { CommonModule } from "@angular/common";
-import { MyGalleryService } from "./my-gallery.service";
 import { ImageComponent } from './gallery/images/image/image.component';
 import {GeneralModule} from "../common/general.module";
+import { ImageEditingComponent } from './gallery/images/image-editing/image-editing.component';
+import { ImagePreviewComponent } from './gallery/images/image-preview/image-preview.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import {GeneralModule} from "../common/general.module";
     ImagesComponent,
     AddImageComponent,
     AddFolderComponent,
-    ImageComponent
+    ImageComponent,
+    ImageEditingComponent,
+    ImagePreviewComponent
   ],
   exports: [
     FolderSidebarComponent
@@ -30,7 +33,6 @@ import {GeneralModule} from "../common/general.module";
     GeneralModule
   ],
   providers: [
-    MyGalleryService,
     FileReader
   ]
 })

@@ -1,0 +1,38 @@
+.background {
+  Position:absolute;
+  top:0;
+  left: 0;
+  width: 1900px;
+  height: 1070px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 1);
+  box-shadow: 0 4px 50px #000000;
+  -webkit-user-select: none;
+  z-index: 3;
+}
+
+.back {
+  width: 16px;
+  height: 15px;
+  background: url("../../../../../../src/assets/images/image-preview/arow.png") no-repeat center center;
+  background-size: cover;
+}
+
+.center-img {
+  text-align: center;
+}
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  max-height: 700px;
+}
+
+.photo {
+  max-width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
