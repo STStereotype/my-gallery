@@ -11,12 +11,60 @@
   z-index: 3;
 }
 
+.panel-heading-background {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-background {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: #000;
+  transition: background-color .4s;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.back-background:hover {
+  background: rgba(115, 115, 115, 0.3);
+}
+
 .back {
   width: 16px;
   height: 15px;
   background: url("../../../../../../src/assets/images/image-preview/arow.png") no-repeat center center;
   background-size: cover;
+  margin: 8px 8px;
+  z-index: 2;
 }
+
+.ellipsis-background {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: #000;
+  transition: background-color .4s;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.ellipsis-background:hover {
+  background: rgba(115, 115, 115, 0.3);
+
+}
+
+.ellipsis {
+  width: 16px;
+  height: 16px;
+  background: url("../../../../../../src/assets/images/image-preview/ellipsis.png") no-repeat center center;
+  background-size: cover;
+  z-index: 2;
+  margin: 8px 8px;
+}
+
 
 .center-img {
   text-align: center;
@@ -35,4 +83,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.edit-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.edit-panel-item {
+  display: block;
+  padding: 15px 0;
 }

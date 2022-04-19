@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {catchError, throwError} from "rxjs";
 import {UsersServices} from "../users/users.services";
+import {Router} from "@angular/router";
 
 interface Image {
   nameImage: string,
@@ -24,7 +25,7 @@ export class MyGalleryService {
   folders: Array<Folder> = [];
   images: Array<Image> = [];
 
-  constructor(private http: HttpClient, private  user: UsersServices) {}
+  constructor(private http: HttpClient, private  user: UsersServices, private rout: Router) {}
 
   SetFolder(name: string) {
     let folderId = 1;
@@ -53,6 +54,16 @@ export class MyGalleryService {
     console.log(this.user.user.folders[index].images);
     this.user.user.folders[index].images.push(image);
     this.user.user.folders[index].sizeFolder += image.sizeImage;
+    return this.PutUser();
+  }
+
+  DeleteImage(urlImage: string) {
+    for(let i = 0; i < this.user.user.folders.length; i++) {
+      if(this.user.user.folders[i].images[1].url === urlImage) {
+        this.user.user.folders.splice(i, 1);
+        this.rout.navigate([this.rout.url.slice(0, this.rout.url.lastIndexOf("/"))]);
+      }
+    }
     return this.PutUser();
   }
 

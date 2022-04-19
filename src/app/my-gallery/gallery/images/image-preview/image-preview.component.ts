@@ -9,8 +9,10 @@ import {MyGalleryService} from "../../../my-gallery.service";
 })
 export class ImagePreviewComponent implements OnInit {
 
+  bol: boolean = false;
   image: any;
-  constructor(private rout: ActivatedRoute, private myGallery: MyGalleryService, private rou: Router) {
+
+  constructor(private rout: ActivatedRoute, public myGallery: MyGalleryService, private rou: Router) {
     this.SearchImage(rout.snapshot.params["url"]);
   }
 

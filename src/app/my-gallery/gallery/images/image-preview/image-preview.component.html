@@ -2,7 +2,19 @@
   <div class="background">
       <div class="panel-heading">
         <div class="panel-heading-background">
-          <p class="back" (click)="Back()"></p>
+          <div class="back-background" (click)="Back()">
+            <p class="back"></p>
+          </div>
+          <div>
+            <div class="ellipsis-background" (click)="bol = true" (mouseleave)="bol = false">
+              <p class="ellipsis"></p>
+              <div *ngIf="bol" class="edit-panel">
+                <a href="{{image.image}}" download class="edit-panel-item">Скачать</a>
+                <a class="edit-panel-item">Редактировать</a>
+                <a class="edit-panel-item" (click)="myGallery.DeleteImage(image.url)">Удалить</a>
+              </div>
+            </div>
+          </div>
         </div>
         <img src="{{image.image}}" alt="" class="photo">
       </div>
